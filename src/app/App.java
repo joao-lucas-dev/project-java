@@ -18,12 +18,6 @@ public class App {
     public static int bubbleSort(int Array[]) {
         int i, n, aux, c;
         c = 0;
-        Random push = new Random();
-        // Adicionar números no array
-        for(i = 0; i < Array.length; i++) {
-            // Colocar o número na última posição do array
-            Array[i] = push.nextInt(1000);
-        }
         // Percorrer o array e ordenar o números em forma crescente
         for(n = 0; n < Array.length; n++) {
             for(i = 0; i < Array.length - 1; i++) {
