@@ -14,6 +14,12 @@
         public static int count_bubble_100 = 0;
         public static int count_bubble_1000 = 0;
         public static int count_bubble_10000 = 0;
+        public static int count_selection_5 = 0;
+        public static int count_selection_10 = 0;
+        public static int count_selection_50 = 0;
+        public static int count_selection_100 = 0;
+        public static int count_selection_1000 = 0;
+        public static int count_selection_10000 = 0;
 
         public static int bubbleSort(int Array[]) {
             int i, n, aux, c;
@@ -37,8 +43,45 @@
             for(i = 0; i < Array.length; i++) {
                 System.out.println((i+1)+"˚ número: "+ Array[i]);
             }
-            System.out.println("\nQuantas vezes foi executado: " + c);
             System.out.println("----------------------------------------");
+            return c;
+        }
+
+        public static int selectionSort(int Array[]) {
+            int i, n, eleito, min, pos, c;
+            c = 0;
+            // Percorrer o array e ordenar o números em forma crescente
+            for (i = 0; i < Array.length - 1; i++) {
+                eleito = Array[i];
+                min = Array[i + 1];
+                pos = i + 1;
+    
+                // Percorrer o array a partir do próximo número, sem ser o da variável
+                // min, para saber qual o menor número
+                for (n = i + 2; n < Array.length; n++) {
+                    if(Array[n] < min) {
+                        min = Array[n];
+                        pos = n;
+                    }
+                    c++;
+                }
+                // Caso o for acima não ache nenhum número menor que o da variável min,
+                // irá ter uma comparação entre o min e o n˚ eleito para saber quem é
+                // menor
+                if (min < eleito) {
+                    Array[i] = Array[pos];
+                    Array[pos] = eleito;
+                    c++;
+                }
+            }
+            System.out.println("\n\n----------------------------------------");
+            System.out.println("\nResultado:\n");
+            // Exibir os valores do array
+            for(i = 0; i < Array.length; i++) {
+                System.out.println((i+1)+"˚ número: "+ Array[i]);
+            }
+            System.out.println("----------------------------------------");
+    
             return c;
         }
         
@@ -316,6 +359,72 @@
             // Calcula a média de comparações
             // Imprime ou salva em arquivo para ajudar a montar o gráfico do relatório
 
+            //  Array[5]
+        System.out.println("----------------ARRAY[5]-------------------");
+        count_selection_5 += selectionSort(vt_tam_5_1);
+        count_selection_5 += selectionSort(vt_tam_5_2);
+        count_selection_5 += selectionSort(vt_tam_5_3);
+        count_selection_5 += selectionSort(vt_tam_5_4);
+        count_selection_5 += selectionSort(vt_tam_5_5);
+        count_selection_5 += selectionSort(vt_tam_5_6);
+        count_selection_5 += selectionSort(vt_tam_5_7);
+        count_selection_5 += selectionSort(vt_tam_5_8);
+        
+        //  Array[10]
+        System.out.println("----------------ARRAY[10]-------------------");
+        count_selection_10 += selectionSort(vt_tam_10_1);
+        count_selection_10 += selectionSort(vt_tam_10_2);
+        count_selection_10 += selectionSort(vt_tam_10_3);
+        count_selection_10 += selectionSort(vt_tam_10_4);
+        count_selection_10 += selectionSort(vt_tam_10_5);
+        count_selection_10 += selectionSort(vt_tam_10_6);
+        count_selection_10 += selectionSort(vt_tam_10_7);
+        count_selection_10 += selectionSort(vt_tam_10_8);
+        
+        //  Array[50]
+        System.out.println("----------------ARRAY[50]-------------------");
+        count_selection_50 += selectionSort(vt_tam_50_1);
+        count_selection_50 += selectionSort(vt_tam_50_2);
+        count_selection_50 += selectionSort(vt_tam_50_3);
+        count_selection_50 += selectionSort(vt_tam_50_4);
+        count_selection_50 += selectionSort(vt_tam_50_5);
+        count_selection_50 += selectionSort(vt_tam_50_6);
+        count_selection_50 += selectionSort(vt_tam_50_7);
+        count_selection_50 += selectionSort(vt_tam_50_8);
+        
+        //  Array[100]
+        System.out.println("----------------ARRAY[100]-------------------");
+        count_selection_100 += selectionSort(vt_tam_100_1);
+        count_selection_100 += selectionSort(vt_tam_100_2);
+        count_selection_100 += selectionSort(vt_tam_100_3);
+        count_selection_100 += selectionSort(vt_tam_100_4);
+        count_selection_100 += selectionSort(vt_tam_100_5);
+        count_selection_100 += selectionSort(vt_tam_100_6);
+        count_selection_100 += selectionSort(vt_tam_100_7);
+        count_selection_100 += selectionSort(vt_tam_100_8);
+        
+        //  Array[1000]
+        System.out.println("----------------ARRAY[1000]-------------------");
+        count_selection_1000 += selectionSort(vt_tam_1000_1);
+        count_selection_1000 += selectionSort(vt_tam_1000_2);
+        count_selection_1000 += selectionSort(vt_tam_1000_3);
+        count_selection_1000 += selectionSort(vt_tam_1000_4);
+        count_selection_1000 += selectionSort(vt_tam_1000_5);
+        count_selection_1000 += selectionSort(vt_tam_1000_6);
+        count_selection_1000 += selectionSort(vt_tam_1000_7);
+        count_selection_1000 += selectionSort(vt_tam_1000_8);
+        
+        //  Array[10000]
+        System.out.println("----------------ARRAY[10000]-------------------");
+        count_selection_10000 += selectionSort(vt_tam_10000_1);
+        count_selection_10000 += selectionSort(vt_tam_10000_2);
+        count_selection_10000 += selectionSort(vt_tam_10000_3);
+        count_selection_10000 += selectionSort(vt_tam_10000_4);
+        count_selection_10000 += selectionSort(vt_tam_10000_5);
+        count_selection_10000 += selectionSort(vt_tam_10000_6);
+        count_selection_10000 += selectionSort(vt_tam_10000_7);
+        count_selection_10000 += selectionSort(vt_tam_10000_8);
+
             // Insertion
             // Calcula a média de comparações
             // Imprime ou salva em arquivo para ajudar a montar o gráfico do relatório
@@ -336,6 +445,13 @@
             System.out.println("Média de vezes executado (Array[100]): " + count_bubble_100 / 8);
             System.out.println("Média de vezes executado (Array[1000]): " + count_bubble_1000 / 8);
             System.out.println("Média de vezes executado (Array[10000]): " + count_bubble_10000 / 8);
+            System.out.println("\n- Selection Sort:\n");
+            System.out.println("Média de vezes executado (Array[5]): " + count_selection_5 / 8);
+            System.out.println("Média de vezes executado (Array[10]): " + count_selection_10 / 8);
+            System.out.println("Média de vezes executado (Array[50]): " + count_selection_50 / 8);
+            System.out.println("Média de vezes executado (Array[100]): " + count_selection_100 / 8);
+            System.out.println("Média de vezes executado (Array[1000]): " + count_selection_1000 / 8);
+            System.out.println("Média de vezes executado (Array[10000]): " + count_selection_10000 / 8);
             
 
 
